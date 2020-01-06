@@ -7,3 +7,6 @@ To download grab the .dll here: https://github.com/paroyer/BetterMap/releases , 
 
 
 For use with the Cube World Mod Launcher: https://github.com/ChrisMiuchiz/Cube-World-Mod-Launcher
+
+
+*Exemple of some features here: https://imgur.com/a/GHuQoFf

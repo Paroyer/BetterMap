@@ -1,4 +1,4 @@
-#Cubeworld Better Map Mod
+#Cubeworld Better Map Mod##testswag
 
 To download grab the .dll here: https://github.com/paroyer/BetterMap/releases ,  and place in your /Mods folder
 

@@ -8,4 +8,8 @@ To download grab the .dll here: https://github.com/paroyer/BetterMap/releases , 
 For use with the Cube World Mod Launcher: https://github.com/ChrisMiuchiz/Cube-World-Mod-Launcher
 
 
-*Exemple of some features here: https://imgur.com/a/GHuQoFf
+*Exemple of some features here: https://imgur.com/a/GHuQoFf*
+
+![BetterMap QuestIcons](README/Show quest icons.png?raw=true)
+
+![BetterMap QuestNames](README/Show quest names.png?raw=true)

@@ -13,3 +13,10 @@ For use with the Cube World Mod Launcher: https://github.com/ChrisMiuchiz/Cube-W
 ![BetterMap QuestIcons](README/Show quest icons.png?raw=true)
 
 ![BetterMap QuestNames](README/Show quest names.png?raw=true)
+Middle Click - Copy block from environment. This is the primary method of switching blocks.
+
+## Screenshots
+
+![Building Mod GUI](README-imagery/GUI.png?raw=true)
+
+![Building Mod](https://puu.sh/BSrwg/7c1c3aa890.jpg)

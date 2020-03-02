@@ -10,6 +10,3 @@ For use with the Cube World Mod Launcher: https://github.com/ChrisMiuchiz/Cube-W
 
 ## Exemple of some features here: https://imgur.com/a/GHuQoFf
 
-![BetterMap QuestIcons](README/ShowQuestIcons.png?raw=true)
-
-![BetterMap QuestNames](README/ShowQuestNames.png?raw=true)

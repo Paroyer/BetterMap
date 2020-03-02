@@ -1,6 +1,6 @@
 #ifndef BETTERMAPMOD_H
 #define BETTERMAPMOD_H
-#include "cwmods/cwsdk.h"
+#include "CWSDK/cwsdk.h"
 #include "DButton.h"
 #include "BetterMapWindow.h"
 

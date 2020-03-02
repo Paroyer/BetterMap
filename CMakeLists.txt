@@ -1,6 +1,6 @@
 cmake_minimum_required (VERSION 3.8)
 project(project_BetterMap)
-add_subdirectory(cwmods)
+add_subdirectory(CWSDK)
 add_subdirectory(imgui-1.73)
 add_library (BetterMap SHARED 
 "main.cpp" 

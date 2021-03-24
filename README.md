@@ -1,31 +1,28 @@
 # Cubeworld BetterMap Mod
 
-To download grab the .dll here: https://github.com/paroyer/BetterMap/releases ,  and place in your /Mods folder
-
-
-**If ever the game dont launch after putting some dll in your /Mods folder, try that redist: https://support.microsoft.com/en-ca/help/2977003/the-latest-supported-visual-c-downloads**
-
+To instal grab the .dll here: https://github.com/paroyer/BetterMap/releases ,  and place in your /Mods folder
 
 For use with the Cube World Mod Launcher: https://github.com/ChrisMiuchiz/Cube-World-Mod-Launcher
 
+**If ever the game dont launch after putting some .dll in your /Mods folder, try that redist: https://support.microsoft.com/en-ca/help/2977003/the-latest-supported-visual-c-downloads**
 
 # Exemple of some features here: https://imgur.com/a/GHuQoFf
 
-## QuestIcons
+## Quest Icons
 ![BetterMap QuestIcons](README/ShowQuestIcons.png?raw=true)
-## QuestIcons
+## Quest Names
 ![BetterMap QuestNames](README/ShowQuestNames.png?raw=true)
-## QuestIcons
+## Lore, Shrine and Treasure icons
 ![BetterMap LoreShrineTreasure](README/ShowLoreShrineTreasure.png?raw=true)
-## QuestIcons
+## FlightPoint
 ![BetterMap FlightPoint](README/ShowFlightPoint.png?raw=true)
-## QuestIcons
+## Increase ZoomIn
 ![BetterMap IncZoomIn](README/IncZoomIn.png?raw=true)
-## QuestIcons
+## Increase ZoomOut
 ![BetterMap IncZoomOut](README/IncZoomOut.png?raw=true)
-## QuestIcons
+## Increase MapRotation
 ![BetterMap IncMapRot](README/IncreaseMapRot.png?raw=true)
-## QuestIcons
+## Show Map Border
 ![BetterMap MapBorder](README/ShowMapBorder.png?raw=true)
 __________________________________________________________________
 Special thanks to [ChrisMiuchiz](https://github.com/ChrisMiuchiz) for the mod loader and everything he did for cubeworld.

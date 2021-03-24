@@ -28,6 +28,9 @@ For use with the Cube World Mod Launcher: https://github.com/ChrisMiuchiz/Cube-W
 ![BetterMap MapBorder](README/ShowMapBorder.png?raw=true)
 __________________________________________________________________
 Special thanks to [ChrisMiuchiz](https://github.com/ChrisMiuchiz) for the mod loader and everything he did for cubeworld.
+
 This mod uses [CWSDK](https://github.com/ChrisMiuchiz/CWSDK).
+
 Big thanks to Geo for his Cheat Table, saved all of us so much time.
+
 Last special thanks to [Nichiren](https://github.com/thetrueoneshots) for all his mods and help!

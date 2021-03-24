@@ -1,4 +1,4 @@
-## Cubeworld Better Map Mod
+# Cubeworld BetterMap Mod
 
 To download grab the .dll here: https://github.com/paroyer/BetterMap/releases ,  and place in your /Mods folder
 
@@ -9,23 +9,23 @@ To download grab the .dll here: https://github.com/paroyer/BetterMap/releases , 
 For use with the Cube World Mod Launcher: https://github.com/ChrisMiuchiz/Cube-World-Mod-Launcher
 
 
-## Exemple of some features here: https://imgur.com/a/GHuQoFf
+# Exemple of some features here: https://imgur.com/a/GHuQoFf
 
-# QuestIcons
+## QuestIcons
 ![BetterMap QuestIcons](README/ShowQuestIcons.png?raw=true)
-
+## QuestIcons
 ![BetterMap QuestNames](README/ShowQuestNames.png?raw=true)
-
+## QuestIcons
 ![BetterMap LoreShrineTreasure](README/ShowLoreShrineTreasure.png?raw=true)
-
+## QuestIcons
 ![BetterMap FlightPoint](README/ShowFlightPoint.png?raw=true)
-
+## QuestIcons
 ![BetterMap IncZoomIn](README/IncZoomIn.png?raw=true)
-
+## QuestIcons
 ![BetterMap IncZoomOut](README/IncZoomOut.png?raw=true)
-
+## QuestIcons
 ![BetterMap IncMapRot](README/IncreaseMapRot.png?raw=true)
-
+## QuestIcons
 ![BetterMap MapBorder](README/ShowMapBorder.png?raw=true)
 __________________________________________________________________
 Special thanks to [ChrisMiuchiz](https://github.com/ChrisMiuchiz) for the mod loader and everything he did for cubeworld.

@@ -11,6 +11,7 @@ For use with the Cube World Mod Launcher: https://github.com/ChrisMiuchiz/Cube-W
 
 ## Exemple of some features here: https://imgur.com/a/GHuQoFf
 
+# QuestIcons
 ![BetterMap QuestIcons](README/ShowQuestIcons.png?raw=true)
 
 ![BetterMap QuestNames](README/ShowQuestNames.png?raw=true)
@@ -28,9 +29,8 @@ For use with the Cube World Mod Launcher: https://github.com/ChrisMiuchiz/Cube-W
 ![BetterMap MapBorder](README/ShowMapBorder.png?raw=true)
 __________________________________________________________________
 Special thanks to [ChrisMiuchiz](https://github.com/ChrisMiuchiz) for the mod loader and everything he did for cubeworld.
-
 This mod uses [CWSDK](https://github.com/ChrisMiuchiz/CWSDK).
 
-Big thanks to Geo for his Cheat Table, saved all of us so much time.
+Big thanks to [Geo](https://www.reddit.com/r/CubeWorld/comments/dbdrla/geocubeworldhacktool_and_cheat_table/) for his Cheat Table, saved all of us so much time.
 
 Last special thanks to [Nichiren](https://github.com/thetrueoneshots) for all his mods and help!

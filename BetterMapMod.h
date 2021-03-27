@@ -8,10 +8,10 @@ class BetterMapMod : GenericMod {
 private:
 	DButton Button = DButton(DIK_GRAVE);
 	cube::Game* game;
-	BuildWindow* BetterMapWindow;
+	BetterMapwindow* BetterMapWindow;
 
 public:
-
+	
 
 private:
 	void PrintMessagePrefix();

@@ -8,7 +8,7 @@
 
 
 class BetterMapMod;
-class BuildWindow {
+class BetterMapwindow {
 	bool QuestIconEnable = false;
 	bool QuestNameEnable = false;
 	bool OthersEnable = false;
@@ -22,15 +22,14 @@ class BuildWindow {
 	bool initialized = false;
 
 	cube::Game* game;
-	BetterMapMod* mod;
+	BetterMapMod* BetterMapWindow;
 public:
-	BuildWindow(BetterMapMod* mod); 
+	BetterMapwindow(BetterMapMod* BetterMapWindow);
 	void Present();
-	void Initialize();
-	void Update();
+	bool Initialize();
 	int WindowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
-	void OnGetMouseState(DIMOUSESTATE* diMouse);
 	void OnGetKeyboardState(BYTE* diKeys);
+	void OnGetMouseState(DIMOUSESTATE* diMouse);
 
 };
 

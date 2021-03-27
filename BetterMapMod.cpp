@@ -1,5 +1,7 @@
 #include "BetterMapMod.h"
 
+bool DivideKeyPress = false;
+
 void BetterMapMod::PrintMessagePrefix() { 
 	game->PrintMessage(L"[");
 	game->PrintMessage(L"BetterMap Mod", 135, 206, 250);
@@ -46,7 +48,7 @@ bool BetterMapMod::InOtherGUI() {
 // Event handlers
 void BetterMapMod::Initialize() { 
 
-	BetterMapWindow = new BuildWindow(this); //DontTouch BuildWindows(this) 
+	BetterMapWindow = new BetterMapwindow(this); 
 }
 
 void BetterMapMod::OnGameTick(cube::Game* game) { 
@@ -54,12 +56,50 @@ void BetterMapMod::OnGameTick(cube::Game* game) {
 }
 
 void BetterMapMod::OnGetKeyboardState(BYTE* diKeys) {
-	BetterMapWindow->OnGetKeyboardState(diKeys);
-	Button.Update(diKeys);
-	if (Button.Pressed()) {
-	//dosmt  	ToggleSomeMode();
+	if (DivideKeyPress == true) {
+		WriteByte(CWOffset(0xA38D3), 0x90);
+		WriteByte(CWOffset(0xA38D3 + 1), 0x90);
+		WriteByte(CWOffset(0xA38D3 + 2), 0x90);
+		WriteByte(CWOffset(0xA38D3 + 3), 0x90);
+		WriteByte(CWOffset(0xA38D3 + 4), 0x90);
+		WriteByte(CWOffset(0xA38D3 + 5), 0x90);
+		WriteByte(CWOffset(0xA38D3 + 6), 0x90);
+		WriteByte(CWOffset(0xA38D3 + 7), 0x90);
+		WriteByte(CWOffset(0xA38EE), 0x90);
+		WriteByte(CWOffset(0xA38EE + 1), 0x90);
+		WriteByte(CWOffset(0xA38EE + 2), 0x90);
+		WriteByte(CWOffset(0xA38EE + 3), 0x90);
+		WriteByte(CWOffset(0xA38EE + 4), 0x90);
+		WriteByte(CWOffset(0xA38EE + 5), 0x90);
+		WriteByte(CWOffset(0xA38EE + 6), 0x90);
+		game->Walk_Z = 1.f;
 	}
-
+	static DButton DivideKey(181);
+	BetterMapWindow->OnGetKeyboardState(diKeys);
+	DivideKey.Update(diKeys);
+	if (DivideKey.Pressed()) {
+		if (DivideKeyPress == true) {
+			DivideKeyPress = false;
+			WriteByte(CWOffset(0xA38D3), 0xF3);
+			WriteByte(CWOffset(0xA38D3 + 1), 0x0F);
+			WriteByte(CWOffset(0xA38D3 + 2), 0x11);
+			WriteByte(CWOffset(0xA38D3 + 3), 0x91);
+			WriteByte(CWOffset(0xA38D3 + 4), 0x70);
+			WriteByte(CWOffset(0xA38D3 + 5), 0x1D);
+			WriteByte(CWOffset(0xA38D3 + 6), 0x00);
+			WriteByte(CWOffset(0xA38D3 + 7), 0x00);
+			WriteByte(CWOffset(0xA38EE), 0x48);
+			WriteByte(CWOffset(0xA38EE + 1), 0x89);
+			WriteByte(CWOffset(0xA38EE + 2), 0x81);
+			WriteByte(CWOffset(0xA38EE + 3), 0x6C);
+			WriteByte(CWOffset(0xA38EE + 4), 0x1D);
+			WriteByte(CWOffset(0xA38EE + 5), 0x00);
+			WriteByte(CWOffset(0xA38EE + 6), 0x00);
+		}
+		else {
+		DivideKeyPress = true;
+		}
+	}
 }
 
 void BetterMapMod::OnGetMouseState(DIMOUSESTATE* diMouse) { 
@@ -81,6 +121,6 @@ int BetterMapMod::OnChat(std::wstring* msg) {
 		game->PrintMessage(L"[Quest Name] Show the quest Names on the map\n", 135, 206, 250);
 		game->PrintMessage(L"[Lore/Shrine/Treasure] Show those on the map, tho cant use shrine until you get there\n", 135, 206, 250);
 		return 1;
-	}
+	}		
 	return 0;
 }

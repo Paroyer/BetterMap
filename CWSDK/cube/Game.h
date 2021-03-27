@@ -203,7 +203,12 @@ namespace cube {
 			CRITICAL_SECTION critical_section_4;
 			int width;
 			int height;
-			_BYTE gap1D68[24];
+			_BYTE gap1D68[4];
+			float Walk_X;
+			float Walk_Z;
+			float Rotation_ZX;
+			float Rotation_YZ;
+			_BYTE gap1D7C[4];
 			DoubleVector3 camera_angle;
 			DoubleVector3 target_camera_angle;
 			int field_1DB0;

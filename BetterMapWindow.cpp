@@ -1,15 +1,17 @@
 #include "BetterMapWindow.h"
 #include "BetterMapMod.h"
 
+void DrawCursor(cube::Game* game);
 
-
-BuildWindow::BuildWindow(BetterMapMod* mod) {//DontChange BuildWindow
-	this->mod = mod;
+BetterMapwindow::BetterMapwindow(BetterMapMod* BetterMapWindow) {//DontChange BuildWindow
+	this->BetterMapWindow = BetterMapWindow;
 }
 
-void BuildWindow::Present() {
+void BetterMapwindow::Present() {
 	if (!initialized) {
-		Initialize();
+		if (!Initialize()) {
+			return;
+		}
 	}
 
 	if (!game->gui.map_open) {//Show With Map
@@ -24,7 +26,7 @@ void BuildWindow::Present() {
 	io.IniFilename = nullptr;
 	wantMouse = io.WantCaptureMouse;
 	wantKeyboard = io.WantCaptureKeyboard;
-	io.MouseDrawCursor = wantMouse;
+	io.DisplaySize = ImVec2((float)game->width, (float)game->height);
 	io.Fonts->AddFontFromFileTTF("resource1.dat", 16.0f);//Font
 
 	ImGui_ImplDX11_NewFrame();
@@ -148,21 +150,25 @@ void BuildWindow::Present() {
 	ImGui::EndFrame();
 	ImGui::Render();
 	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
-
+	DrawCursor(this->game);
 }
 
-void BuildWindow::Initialize() {	
+bool BetterMapwindow::Initialize() 
+{
+	HWND hWnd = GetActiveWindow();
+	if (!hWnd) return false;
 	game = cube::GetGame();
 	initialized = true;
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
-	ImGui::StyleColorsDark();
-	ImGui_ImplWin32_Init(GetActiveWindow());
+	ImGui::StyleColorsDark(); 
+	ImGui_ImplWin32_Init(hWnd);
 	ImGui_ImplDX11_Init(cube::GetID3D11Device(), cube::GetID3D11DeviceContext());
+	return true;
 }
 
 extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);//DontTouch
-int BuildWindow::WindowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) {//DontTouch
+int BetterMapwindow::WindowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) {//DontTouch
 	ImGui_ImplWin32_WndProcHandler(hWnd, msg, wParam, lParam);
 	if (wantMouse) {
 		switch (msg) {
@@ -175,7 +181,13 @@ int BuildWindow::WindowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 	return 0;
 }
 
-void BuildWindow::OnGetMouseState(DIMOUSESTATE* diMouse) {//DontTouch
+void BetterMapwindow::OnGetKeyboardState(BYTE* diKeys) {//DontTouch
+	if (wantKeyboard) {
+		memset(diKeys, 0, 256);
+	}
+}
+
+void BetterMapwindow::OnGetMouseState(DIMOUSESTATE* diMouse) {//DontTouch
 	if (wantMouse) {
 		diMouse->rgbButtons[0] = 0;
 		diMouse->rgbButtons[1] = 0;
@@ -183,8 +195,15 @@ void BuildWindow::OnGetMouseState(DIMOUSESTATE* diMouse) {//DontTouch
 	}
 }
 
-void BuildWindow::OnGetKeyboardState(BYTE* diKeys) {//DontTouch
-	if (wantKeyboard) {
-		memset(diKeys, 0, 256);
-	}
+void DrawCursor(cube::Game* game)
+{
+	float guiScale = game->options.guiScale;
+	FloatVector2 cursorPosition = game->plasma_engine->mouse_position;
+	plasma::Matrix<float>* trans = &game->gui.cursor_node->transformation->matrix;
+	plasma::Matrix<float> oldTrans = *trans;
+	*trans = trans->scale(guiScale).translate(cursorPosition.x - (cursorPosition.x / guiScale), cursorPosition.y - (cursorPosition.y / guiScale), 0);
+
+	game->gui.cursor_node->Draw(0);
+
+	*trans = oldTrans;
 }
